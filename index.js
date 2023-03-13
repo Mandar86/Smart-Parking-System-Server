@@ -39,8 +39,9 @@ app.get("/", async (req, res) => {
     console.log(err)
   })
 });
-app.post("/data/:data", async (req, res) => {
-  let data = Number(req.params.data);
+app.post("/data", async (req, res) => {
+  let {data} = req.body;
+  data = Number(data)
   // console.log(data)
   // console.log(typeof(data))
   let sensor = new Sensor({
