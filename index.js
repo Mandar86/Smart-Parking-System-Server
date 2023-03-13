@@ -41,16 +41,16 @@ app.get("/", async (req, res) => {
 });
 app.post("/data/:data", async (req, res) => {
   let data = Number(req.params.data);
-  console.log(data)
-  console.log(typeof(data))
-  // let sensor = new Sensor({
-  //   data :data,
-  //   timeStamp: new Date()
-  // })
+  // console.log(data)
+  // console.log(typeof(data))
+  let sensor = new Sensor({
+    data :data,
+    timeStamp: new Date()
+  })
 
-  // sensor.save()
-  // .then((response)=>{
-  //   res.send(response)
-  // })
+  sensor.save()
+  .then((response)=>{
+    res.send(response)
+  })
 });
 app.listen(PORT, () => console.log("Listening on port", PORT));
