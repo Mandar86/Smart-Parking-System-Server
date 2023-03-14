@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 let schema = new mongoose.Schema(
     {
         data:{
-            type: Number
+            type: String
         },
         timeStamp : {
             type: mongoose.Schema.Types.Date
