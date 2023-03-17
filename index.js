@@ -32,8 +32,9 @@ app.use(express.json());
 app.get("/", async (req, res) => {
   Sensor.find()
   .then((response)=>{
+    let a = [...response]
     // console.log(response)
-    res.json(response)
+    res.send(`Status is:${a[a.length-1].data}`)
   })
   .catch((err)=>{
     console.log(err)
