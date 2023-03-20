@@ -40,19 +40,20 @@ app.get("/", async (req, res) => {
     console.log(err)
   })
 });
-app.post("/data", async (req, res) => {
-  let {data} = req.body;
-  // data = Number(data)
-  // console.log(data)
-  // console.log(typeof(data))
-  let sensor = new Sensor({
-    data :data,
-    timeStamp: new Date()
-  })
-  
-  sensor.save()
-  .then((response)=>{
-    res.send(response)
-  })
+
+app.get("/data/:data", async (req, res) => {
+let {data} = req.params;
+// data = Number(data)
+// console.log(typeof(data))
+let sensor = new Sensor({
+  data :data,
+  timeStamp: new Date()
+})
+console.log(sensor)
+
+sensor.save()
+.then((response)=>{
+  res.send(response)
+})
 });
 app.listen(PORT, () => console.log("Listening on port", PORT));
