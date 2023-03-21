@@ -30,8 +30,9 @@ app.get("/", async (req, res) => {
   Sensor.find()
     .then((response) => {
       let a = [...response];
-      // console.log(response)
-      res.send(`Status is:${a[a.length - 1].data}`);
+      console.log(response)
+      // res.send(`Location is : Status is:${a[a.length - 1].data}`);
+      res.send(response)
     })
     .catch((err) => {
       console.log(err);
