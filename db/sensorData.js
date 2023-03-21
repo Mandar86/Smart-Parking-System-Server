@@ -5,6 +5,10 @@ let schema = new mongoose.Schema(
         data:{
             type: String
         },
+        location:{
+            type:String,
+            default:"COEP"
+        },
         timeStamp : {
             type: mongoose.Schema.Types.Date
         }
