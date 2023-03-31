@@ -24,7 +24,7 @@ const app = express();
 const PORT = process.env.PORT || 9000;
 // middlewares
 app.use(express.json());
-app.use(cors({origin:'*'}))
+app.use(cors())
 // routes
 app.get("/", async (req, res) => {
   Sensor.find()
