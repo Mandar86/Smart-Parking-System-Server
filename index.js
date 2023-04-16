@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 9000;
 // middlewares
 app.use(express.json());
 app.use(cors({
-  origin:"https://parking-system-0-1.vercel.app/"
+  origin:"*"
 }))
 
 // routes
