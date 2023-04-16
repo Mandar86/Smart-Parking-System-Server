@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import Sensor from "./db/sensorData.js";
 
+import cors from "cors"
+
 dotenv.config();
 const DB_PATH = process.env.DB_PATH;
 
@@ -24,6 +26,9 @@ const app = express();
 const PORT = process.env.PORT || 9000;
 // middlewares
 app.use(express.json());
+app.use(cors({
+  origin:"https://parking-system-0-1.vercel.app/"
+}))
 
 // routes
 app.get("/", async (req, res) => {
