@@ -41,6 +41,7 @@ app.get("/", async (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      res.status(400).json(err);
     });
 });
 
@@ -60,6 +61,7 @@ app.get("/data/:data/:location", async (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      res.status(400).json(err);
     });
   console.log("Sensor response", sensor);
   if (!sensor) {
